@@ -1,1 +1,0 @@
-# board-zerynth-polaris_3g

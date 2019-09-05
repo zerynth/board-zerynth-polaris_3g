@@ -1,0 +1,14 @@
+---
+description: Add support for Polaris 3G board
+fullname: board.zerynth.polaris_3g
+info:
+    board: Polaris 3G
+    chip_manufacturer: Fortebit
+    device: stm32f452
+    family_type: ARM Cortex M4
+keywords:
+- board
+- robotech
+- stm
+title: Polaris 3G Board Support Package
+...
