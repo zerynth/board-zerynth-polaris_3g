@@ -36,7 +36,7 @@ const PinInfo const _vhalpinmap[] STORED = {
     /* PA */
     /* D20  */ MAKE_PIN(PA,  0, HAS_EXT | HAS_PWM | HAS_ADC),    /* MCU Voltage Level */
     /* D21  */ MAKE_PIN(PA,  1, HAS_EXT | HAS_PWM | HAS_ADC),    /* MCU AIN1 */
-    /* D22  */ MAKE_PIN(PA,  2, HAS_EXT),                        /* MCU IN1 Out */
+    /* D22  */ MAKE_PIN(PA,  2, HAS_EXT | HAS_PWM),              /* MCU IN1 Out */
     /* D23  */ MAKE_PIN(PA,  3, HAS_EXT | HAS_PWM | HAS_ADC),    /* MCU AIN2 */
     /* D24  */ MAKE_PIN(PA,  6, HAS_EXT),                        /* MCU IO3 FLASH */
     /* D25  */ MAKE_PIN(PA,  7, HAS_EXT),                        /* MCU IO2 FLASH */
@@ -83,11 +83,11 @@ const PinInfo const _vhalpinmap[] STORED = {
     /* D60  */ MAKE_PIN(PD, 10, HAS_EXT),                        /* MCU CS ACC */
     /* D61  */ MAKE_PIN(PD, 11, HAS_EXT),                        /* MCU INT1 ACC */
     /* D62  */ MAKE_PIN(PD, 12, HAS_EXT),                        /* MCU RANGE IN4 */
-    /* D63  */ MAKE_PIN(PD, 13, HAS_EXT),                        /* MCU USB VBUS */
+    /* D63  */ MAKE_PIN(PD, 13, HAS_EXT),                        /* MCU LED 1 */
     /* D64  */ MAKE_PIN(PD, 14, HAS_EXT),                        /* MCU RANGE IN3 */
 
     /* PE */
-    /* D65  */ MAKE_PIN(PE,  0, HAS_EXT),                        /* MCU IN2 OUT */
+    /* D65  */ MAKE_PIN(PE,  0, HAS_EXT | HAS_PWM),              /* MCU IN2 OUT */
     /* D66  */ MAKE_PIN(PE,  1, HAS_EXT),                        /* MCU CAN1 S */
     /* D67  */ MAKE_PIN(PE,  2, HAS_EXT),                        /* MCU PWR MODEM */
     /* D68  */ MAKE_PIN(PE,  3, HAS_EXT),                        /* MCU WAKE GSM */
@@ -152,6 +152,8 @@ const PinClass const _pwmclass[] STORED = {
     /* PWM10 */ MAKE_PIN_CLASS(69, 2, 2, 2),
     /* PWM11 */ MAKE_PIN_CLASS(70, 2, 2, 3),
     /* PWM12 */ MAKE_PIN_CLASS(71, 2, 2, 4),
+    /* PWM13 */ MAKE_PIN_CLASS(22, 4, 14, 1),
+    /* PWM14 */ MAKE_PIN_CLASS(65, 5, 14, 1),
 };
 
 
@@ -180,9 +182,11 @@ const PinClass const _dacclass[] STORED = {
 
 const PinClass const _ledclass[] STORED = {
     /* LED0 */ MAKE_PIN_CLASS(35, 0, 0, 0),
+    /* LED1 */ MAKE_PIN_CLASS(63, 0, 0, 0),
 };
 
 const PinClass const _btnclass[] STORED = {
 };
+
 
 

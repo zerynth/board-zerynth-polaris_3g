@@ -5,7 +5,7 @@ class Polaris3G(Board):
 
     @staticmethod
     def match(dev):
-        return dev["vid"]=="0483" and dev["pid"] in "5740"
+        return dev["vid"]=="0483" and dev["pid"] in "5740" and dev.get("sid")=="POLARIS10V3G"
 
     def reset(self):
         import time
