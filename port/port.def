@@ -1,7 +1,7 @@
 /* Port definition */
 
 ////LAYOUT: 
-////PERIPHERALS: SERIAL0 SERIAL1 SERIAL2 SERIAL3 SERIAL4 I2C0 SPI0 SPI1 PWMD0 ADC0 SD0
+////PERIPHERALS: SERIAL0 SERIAL1 SERIAL2 SERIAL3 SERIAL4 I2C0 SPI0 SPI1 PWMD0 ADC0 SD0 RTC0 CAN0
 ////CDEFINES: STM32L452xx ZER_STM32L4xxxx_1_6
 
 const PinInfo const _vhalpinmap[] STORED = {
@@ -55,8 +55,8 @@ const PinInfo const _vhalpinmap[] STORED = {
     /* D36  */ MAKE_PIN(PB,  3, HAS_EXT),                        /* DEBUG SWO */
     /* D37  */ MAKE_PIN(PB,  4, HAS_EXT),                        /* MCU STATUS GSM */
     /* D38  */ MAKE_PIN(PB,  5, HAS_EXT),                        /* KILL GSM */
-    /* D39  */ MAKE_PIN(PB,  8, HAS_EXT),                        /* MCU CAN RX */
-    /* D40  */ MAKE_PIN(PB,  9, HAS_EXT),                        /* MCU CAN TX */
+    /* D39  */ MAKE_PIN(PB,  8, HAS_EXT | HAS_CAN),              /* MCU CAN RX */
+    /* D40  */ MAKE_PIN(PB,  9, HAS_EXT | HAS_CAN),              /* MCU CAN TX */
 
     /* PC */
     /* D41  */ MAKE_PIN(PC,  0, HAS_EXT | HAS_ADC),              /* MCU AIN3 */
@@ -161,6 +161,9 @@ const PinClass const _icuclass[] STORED = {
 };
 
 const PinClass const _canclass[] STORED = {
+    /* pin_num, usart, alternate fn */
+    /* CANRX0 */ MAKE_PIN_CLASS(39, 0, 9, 0),
+    /* CANTX0 */ MAKE_PIN_CLASS(40, 0, 9, 0),
 };
 
 const PinClass const _serclass[] STORED = {
